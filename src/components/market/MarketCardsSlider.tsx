@@ -217,16 +217,16 @@ interface MarketCardSliderProps {
 
 function CompactMarketCard({ market }: { market: MarketCardData }) {
   return (
-    <Card className="w-64 h-64 sm:w-72 sm:h-72 bg-gradient-to-br from-[#0a0f14] to-[#12191d] border border-white/10 p-4 sm:p-5 hover:border-white/20 transition-all duration-300 group cursor-pointer flex flex-col rounded-2xl">
+    <Card className="w-64 h-64 sm:w-72 sm:h-72 bg-gradient-to-br from-white to-gray-50 border border-gray-300 p-4 sm:p-5 hover:border-gray-400 hover:shadow-lg transition-all duration-300 group cursor-pointer flex flex-col rounded-2xl shadow-md">
       {/* Header with Position Size Badge */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-1.5 sm:gap-2">
           <Avatar className="h-5 w-5 sm:h-6 sm:w-6">
-            <AvatarFallback className="text-xs bg-white/10 text-white">
+            <AvatarFallback className="text-xs bg-gray-300 text-gray-900">
               {market.creator.avatar}
             </AvatarFallback>
           </Avatar>
-          <span className="text-xs text-white/70 truncate">{market.creator.name}</span>
+          <span className="text-xs text-gray-700 truncate font-medium">{market.creator.name}</span>
         </div>
         <Badge className={`text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 flex items-center gap-1 ${
           market.positionType === 'long' 
@@ -241,7 +241,7 @@ function CompactMarketCard({ market }: { market: MarketCardData }) {
 
       {/* Asset Logo */}
       <div className="flex justify-center mb-3">
-        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center overflow-hidden">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-100 border-2 border-gray-400 flex items-center justify-center overflow-hidden shadow-sm">
           <Image 
             src={`/coin-logos/${market.title}.png`} 
             alt={market.title} 
@@ -253,34 +253,34 @@ function CompactMarketCard({ market }: { market: MarketCardData }) {
       </div>
 
       {/* Question */}
-      <p className="text-xs sm:text-sm text-white/70 mb-4 sm:mb-5 text-center flex-1 leading-tight">
+      <p className="text-xs sm:text-sm text-gray-700 mb-4 sm:mb-5 text-center flex-1 leading-tight font-medium">
         This whale will close position in profit/loss?
       </p>
 
       {/* Horizontal Prices with Background Fill */}
       <div className="grid grid-cols-2 gap-2 sm:gap-3">
-        <div className="relative border border-green-500/20 rounded-xl p-2.5 sm:p-3 text-center hover:border-green-500/30 transition-colors overflow-hidden">
+        <div className="relative border-2 border-green-500/40 rounded-xl p-2.5 sm:p-3 text-center hover:border-green-500/60 transition-colors overflow-hidden bg-green-50/50">
           {/* Background fill based on percentage - vertical */}
           <div 
             className="absolute bottom-0 left-0 right-0 bg-green-500/20 transition-all duration-500 rounded-xl"
             style={{ height: `${market.yesPrice}%` }}
           />
           <div className="relative z-10">
-            <div className="text-xs text-white/70 mb-1">Profit</div>
-            <div className="text-lg sm:text-xl font-bold text-green-400">{market.yesPrice}%</div>
-            <div className="text-xs text-white/50 mt-1">Yes</div>
+            <div className="text-xs text-gray-700 mb-1 font-medium">Profit</div>
+            <div className="text-lg sm:text-xl font-bold text-green-700">{market.yesPrice}%</div>
+            <div className="text-xs text-gray-600 mt-1 font-medium">Yes</div>
           </div>
         </div>
-        <div className="relative border border-red-500/20 rounded-xl p-2.5 sm:p-3 text-center hover:border-red-500/30 transition-colors overflow-hidden">
+        <div className="relative border-2 border-red-500/40 rounded-xl p-2.5 sm:p-3 text-center hover:border-red-500/60 transition-colors overflow-hidden bg-red-50/50">
           {/* Background fill based on percentage - vertical */}
           <div 
             className="absolute bottom-0 left-0 right-0 bg-red-500/20 transition-all duration-500 rounded-xl"
             style={{ height: `${market.noPrice}%` }}
           />
           <div className="relative z-10">
-            <div className="text-xs text-white/70 mb-1">Loss</div>
-            <div className="text-lg sm:text-xl font-bold text-red-400">{market.noPrice}%</div>
-            <div className="text-xs text-white/50 mt-1">No</div>
+            <div className="text-xs text-gray-700 mb-1 font-medium">Loss</div>
+            <div className="text-lg sm:text-xl font-bold text-red-700">{market.noPrice}%</div>
+            <div className="text-xs text-gray-600 mt-1 font-medium">No</div>
           </div>
         </div>
       </div>

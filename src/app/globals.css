@@ -6,41 +6,41 @@
 
 @layer base {
   :root {
-    /* HYPIQ Dark Theme */
-    --background: 162 48% 8%;   /* #0c221d */
-    --foreground: 0 0% 100%;    /* white */
-    --card: 162 34% 9%;         /* #12191d */
-    --card-foreground: 0 0% 100%;
-    --popover: 162 34% 9%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 162 23% 13%;     /* #1a2125 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 162 34% 9%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 162 23% 13%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 162 23% 13%;      /* #1a2125 */
-    --accent-foreground: 0 0% 100%;
+    /* HYPIQ Gray Theme */
+    --background: 210 20% 97%;   /* gray-50 */
+    --foreground: 222.2 84% 4.9%;    /* dark gray text */
+    --card: 0 0% 96%;         /* gray-50 */
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 20% 97%;     /* gray-50 */
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 94%;      /* gray-100 */
+    --accent-foreground: 222.2 84% 4.9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 162 23% 15%;
-    --input: 162 23% 13%;
+    --border: 0 0% 89%;
+    --input: 0 0% 94%;
     --ring: 210 100% 60%;
     --radius: 0.5rem;
     
-    /* HYPIQ brand colors */
-    --hypiq-accent: #4ade80;
-    --hypiq-accent-hover: #22c55e;
-    --hypiq-background: #0a1a15;
-    --hypiq-card: #12191d;
-    --hypiq-border: #1a2125;
+    /* HYPIQ brand colors - gray theme */
+    --hypiq-accent: #6b7280;
+    --hypiq-accent-hover: #4b5563;
+    --hypiq-background: #f9fafb;
+    --hypiq-card: #f3f4f6;
+    --hypiq-border: #e5e7eb;
     
-    /* Kalshi-style colors for compatibility */
-    --kalshi-accent: #4ade80;
-    --kalshi-accent-hover: #22c55e;
-    --kalshi-background: #0a1a15;
-    --kalshi-card: #12191d;
-    --kalshi-border: #1a2125;
+    /* Kalshi-style colors for compatibility - gray theme */
+    --kalshi-accent: #6b7280;
+    --kalshi-accent-hover: #4b5563;
+    --kalshi-background: #f9fafb;
+    --kalshi-card: #f3f4f6;
+    --kalshi-border: #e5e7eb;
   }
 }
 
@@ -51,13 +51,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
 }
 
 .whale-gradient {
@@ -145,10 +140,10 @@ body {
 
 .bg-texture {
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 75% 75%, rgba(74, 222, 128, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(34, 197, 94, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 10% 90%, rgba(74, 222, 128, 0.02) 0%, transparent 40%);
+    radial-gradient(circle at 25% 25%, rgba(107, 114, 128, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(156, 163, 175, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(107, 114, 128, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(156, 163, 175, 0.02) 0%, transparent 40%);
 }
 
 /* Motion preference respect */

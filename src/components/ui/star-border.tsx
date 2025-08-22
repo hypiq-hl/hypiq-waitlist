@@ -18,7 +18,7 @@ export function StarBorder<T extends ElementType = "button">({
   ...props
 }: StarBorderProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof StarBorderProps<T>>) {
   const Component = as || "button"
-  const defaultColor = color || "#1a2125" // HYPIQ accent color
+  const defaultColor = color || "#6b7280" // Gray-500 accent color
 
   return (
     <Component 
@@ -34,7 +34,7 @@ export function StarBorder<T extends ElementType = "button">({
           "opacity-60" 
         )}
         style={{
-          background: `radial-gradient(circle, #60a5fa, transparent 20%)`,
+          background: `radial-gradient(circle, #9ca3af, transparent 20%)`,
           animationDuration: speed,
         }}
       />
@@ -44,13 +44,13 @@ export function StarBorder<T extends ElementType = "button">({
           "opacity-60"
         )}
         style={{
-          background: `radial-gradient(circle, #60a5fa, transparent 20%)`,
+          background: `radial-gradient(circle, #9ca3af, transparent 20%)`,
           animationDuration: speed,
         }}
       />
       <div className={cn(
-        "relative z-1 border text-white text-center text-base py-4 px-6 rounded-[20px]",
-        "bg-[#12191d] border-[#1a2125]"
+        "relative z-1 border text-gray-900 text-center text-base py-4 px-6 rounded-[20px] font-semibold",
+        "bg-gray-100 border-gray-300 hover:bg-gray-200 hover:border-gray-400 transition-all duration-300"
       )}>
         {children}
       </div>
